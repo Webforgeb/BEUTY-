@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#fff8f3;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 5.5rem);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}@keyframes pulse-subtle{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.15);opacity:0.75;}}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#817471", "on-error": "#ffffff", "primary-fixed-dim": "#dbc1bb", "surface-dim": "#e5d8c7", "inverse-on-surface": "#fcefdd", "primary": "#221410", "background": "#fff8f3", "on-primary-fixed": "#261814", "on-primary-container": "#a58e88", "primary-container": "#382824", "on-tertiary-fixed": "#261900", "on-secondary": "#ffffff", "surface-tint": "#6e5a55", "tertiary": "#211500", "on-background": "#211b10", "primary-fixed": "#f8ddd6", "surface-container-lowest": "#ffffff", "on-secondary-container": "#7a4d50", "on-tertiary": "#ffffff", "outline-variant": "#d2c3c0", "on-error-container": "#93000a", "surface-container-highest": "#eee1d0", "surface-container": "#f9ecdb", "inverse-surface": "#372f24", "tertiary-fixed-dim": "#e4c284", "secondary-container": "#fec3c5", "on-surface-variant": "#4f4442", "tertiary-container": "#3b2900", "on-primary-fixed-variant": "#55433e", "tertiary-fixed": "#ffdea5", "inverse-primary": "#dbc1bb", "secondary-fixed": "#ffdada", "surface": "#fff8f3", "on-secondary-fixed": "#321114", "on-surface": "#211b10", "on-tertiary-container": "#ad8f56", "surface-bright": "#fff8f3", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#653b3d", "surface-variant": "#eee1d0", "surface-container-high": "#f4e6d5", "secondary": "#805254", "on-tertiary-fixed-variant": "#5a4311", "error-container": "#ffdad6", "error": "#ba1a1a", "secondary-fixed-dim": "#f2b8ba", "surface-container-low": "#fff2e1" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "3rem", "space-sm": "0.5rem", "margin": "4rem", "margin-mobile": "1.5rem", "gutter-mobile": "1rem", "space-md": "1rem", "gutter": "1.5rem", "space-xs": "0.25rem", "space-lg": "1.75rem" }, "fontFamily": { "headline-md": ["Playfair Display"], "display-hero-mobile": ["Playfair Display"], "headline-lg": ["Playfair Display"], "title-md": ["Playfair Display"], "headline-sm": ["Playfair Display"], "label-md": ["DM Sans"], "label-sm": ["DM Sans"], "body-sm": ["DM Sans"], "display-hero": ["Playfair Display"], "headline-lg-mobile": ["Playfair Display"], "body-lg": ["DM Sans"], "body-md": ["DM Sans"] }, "fontSize": { "headline-md": ["28px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "500" }], "display-hero-mobile": ["38px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-lg-mobile": ["30px", { "lineHeight": "40px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col selection:bg-tertiary-fixed selection:text-tertiary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/95 backdrop-blur-xl shadow-[0_4px_20px_rgba(56,40,36,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Open Navigation Menu" class="w-11 h-11 flex items-center justify-center text-primary active:scale-95 transition-transform" id="menu-open-btn" type="button"><span class="material-symbols-outlined text-[24px]">menu</span></button><a class="flex items-center gap-2" data-path="home" href="#"><img alt="Maison Riad Beauté Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WugkDAO579DW3RQisKYE9td-YNQz88VUdQIxBijkbrC7DOxnZcEyD_KQWpa_wjVas138hx25XHH8N5b9QwBz7IfEC4crwg6MHbfeObTeDAlmzwqlHnHZpz0cY96eF4H6iRNnV5rEPk4ff1VEGD6V7HJhEbg3NIixsgfEsRuUAmmawWlMWoa4rlVS7tV_amSAc8mSWeThBEyaIadQZIQQZFEvAD0RcW131wBdtg5DfBwFjlsHv1gCWfT_7u"/><span class="font-title-md text-title-md text-primary tracking-wide truncate hidden min-[360px]:inline">Maison Riad Beauté</span></a></div><div class="flex items-center gap-space-sm shrink-0"><a class="h-9 px-space-md rounded-full bg-tertiary-container text-tertiary-fixed font-label-md text-label-md uppercase tracking-wider flex items-center justify-center shadow-[0_2px_8px_rgba(56,40,36,0.12)] active:scale-95 transition-all" data-path="booking-ritual" href="#">Book</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="px-gutter-mobile pb-space-xs"><p class="sr-only">Home</p></div></header><div class="fixed inset-0 z-[60] pointer-events-none transition-opacity duration-300 opacity-0" id="mobile-drawer"><div class="absolute inset-0 bg-primary-container/50 backdrop-blur-sm" id="drawer-backdrop"></div><div class="absolute top-0 left-0 bottom-0 w-[82%] max-w-[320px] bg-surface-container-lowest p-margin-mobile flex flex-col justify-between shadow-[0_10px_35px_rgba(56,40,36,0.2)] transform -translate-x-full transition-transform duration-300 ease-out" id="drawer-panel"><div class="flex flex-col gap-space-lg"><div class="flex items-center justify-between pb-space-md"><img alt="Maison Riad Beauté Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WugkDAO579DW3RQisKYE9td-YNQz88VUdQIxBijkbrC7DOxnZcEyD_KQWpa_wjVas138hx25XHH8N5b9QwBz7IfEC4crwg6MHbfeObTeDAlmzwqlHnHZpz0cY96eF4H6iRNnV5rEPk4ff1VEGD6V7HJhEbg3NIixsgfEsRuUAmmawWlMWoa4rlVS7tV_amSAc8mSWeThBEyaIadQZIQQZFEvAD0RcW131wBdtg5DfBwFjlsHv1gCWfT_7u"/><button aria-label="Close Menu" class="w-11 h-11 flex items-center justify-center text-primary" id="menu-close-btn" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button></div><nav class="flex flex-col gap-space-sm" data-active-classes="text-tertiary-container font-semibold"><a aria-current="page" class="h-11 px-space-xs flex items-center transition-colors text-tertiary-container font-semibold" data-path="home" href="#">Home</a><a class="h-11 px-space-xs flex items-center font-title-md text-title-md text-on-surface hover:text-tertiary-container transition-colors" data-path="services" href="#">Services &amp; Hammam</a><a class="h-11 px-space-xs flex items-center font-title-md text-title-md text-on-surface hover:text-tertiary-container transition-colors" data-path="gallery" href="#">Sanctuary Gallery</a><a class="h-11 px-space-xs flex items-center font-title-md text-title-md text-on-surface hover:text-tertiary-container transition-colors" data-path="special-offers" href="#">Special Offers</a><a class="h-11 px-space-xs flex items-center font-title-md text-title-md text-on-surface hover:text-tertiary-container transition-colors" data-path="about-us" href="#">About Us</a><a class="h-11 px-space-xs flex items-center font-title-md text-title-md text-on-surface hover:text-tertiary-container transition-colors" data-path="contact" href="#">Contact &amp; Concierge</a></nav></div><div class="pt-space-md flex flex-col gap-space-xs"><p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Guéliz • Hivernage, Marrakech</p><p class="font-body-sm text-body-sm text-outline">Sanctuary of Haute Élégance</p></div></div></div><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full text-on-surface">
+<!-- 1. HERO SECTION -->
+<section class="relative w-full px-margin-mobile pt-space-lg pb-space-xl overflow-hidden">
+<!-- Subtle Moroccan Arch Ambient Background Decor -->
+<div class="absolute -top-12 -right-16 w-64 h-64 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-20 w-56 h-56 rounded-full bg-tertiary-fixed/30 blur-2xl pointer-events-none"></div>
+<div class="relative flex flex-col gap-space-md z-10">
+<!-- Trust Badge -->
+<div class="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium">Gueliz, Marrakech • Haute Sanctuaire</span>
+</div>
+<!-- Editorial Headline -->
+<div class="flex flex-col gap-1">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary leading-tight font-headline-md tracking-tight">
+          Your Beauty,<br/>
+<span class="italic font-normal font-title-md text-secondary">Our Passion.</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant/90 mt-1 max-w-sm">
+          Discover your true glow with bespoke botanical rituals, French couture styling, and serene hammam indulgence in Marrakech.
+        </p>
+</div>
+<!-- Visual Master Image Card -->
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-[0_12px_32px_rgba(56,40,36,0.12)] mt-1">
+<img alt="Maison Riad Beauté Salon Sanctuary in Marrakech" class="w-full h-full object-cover transform scale-100 hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIGFpd5x478h_REmadQWdp7_hvceKAZ1iXsHQtEJunrnfqCSxW6Cf-YPvQdaySxdeObzt-StnFN7cVOeNn46GcnazlekHo2GcWMcwZqUHP7OqbM7Pg-osr6BJValltMPBJTR3R9dFxk52MYd5oHC9QffCJumuTH2EKMLweL0EDsbewswE6uhrTPZqwrR0aGROU8u3Bp5dR07ZQBzBUaTb86g4URohUMekb5AXIvkfFb-s8m9uiVLAYFw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent flex items-end p-4">
+<div class="flex items-center gap-2 text-surface">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">verified</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-surface-container-lowest">Rituel Haute Couture Marrakech</span>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-col gap-space-sm pt-2">
+<a class="w-full h-12 rounded-full bg-primary-container text-surface flex items-center justify-center gap-2 font-label-md text-label-md uppercase tracking-widest shadow-md active:scale-[0.98] transition-all hover:bg-primary" href="https://wa.me/212600000000?text=Hello!%20I%20would%20like%20to%20book%20an%20appointment%20at%20Maison%20Riad%20Marrakech." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-tertiary-fixed">chat</span>
+<span>Book via WhatsApp</span>
+</a>
+<a class="w-full h-11 rounded-full bg-surface-container-low text-primary flex items-center justify-center gap-2 font-label-md text-label-md uppercase tracking-wider active:scale-[0.98] transition-all" href="#services">
+<span>Explore Our Services</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 2. INTERACTIVE WHATSAPP QUICK-BOOKER WIDGET -->
+<section class="w-full px-margin-mobile -mt-4 mb-space-xl">
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_10px_35px_rgba(56,40,36,0.07)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-secondary-container/50 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</span>
+<div class="flex flex-col">
+<h2 class="font-title-md text-title-md text-primary leading-tight">Instant Salon Concierge</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Select details for priority booking</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-[11px] font-label-sm uppercase tracking-wider text-[#128C7E] bg-[#25D366]/10 px-2 py-0.5 rounded-full font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse"></span>
+          Live
+        </span>
+</div>
+<!-- Quick Selector Controls -->
+<form class="flex flex-col gap-space-sm" id="quick-book-form" onsubmit="event.preventDefault(); window.submitQuickBooking();">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium" for="book-service">Select Sanctuary Ritual</label>
+<div class="relative">
+<select class="w-full h-11 pl-3 pr-10 rounded-lg bg-surface-container-low text-primary font-body-md text-body-md focus:outline-none appearance-none cursor-pointer" id="book-service">
+<option value="Hair Styling &amp; Blow Dry">Hair Styling &amp; Blow Dry (Haute Coiffure)</option>
+<option value="Moroccan Hammam &amp; Royal Spa">Moroccan Hammam &amp; Royal Spa</option>
+<option value="Bridal Makeup &amp; Styling">Haute Bridal Makeup &amp; Styling</option>
+<option value="Hair Coloring &amp; Balayage">Hair Coloring, Balayage &amp; Highlights</option>
+<option value="Luminescent Facial Treatment">Luminescent Facial Treatment</option>
+<option value="Russian Manicure &amp; Pedicure Spa">Russian Manicure &amp; Pedicure Spa</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-3 text-[20px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium" for="book-date">Preferred Date</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-low text-primary font-body-md text-body-md focus:outline-none appearance-none" id="book-date" type="date"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-medium" for="book-time">Time Window</label>
+<div class="relative">
+<select class="w-full h-11 pl-3 pr-8 rounded-lg bg-surface-container-low text-primary font-body-md text-body-md focus:outline-none appearance-none cursor-pointer" id="book-time">
+<option value="Morning (10:00 - 13:00)">Morning (10:00 - 13:00)</option>
+<option value="Afternoon (13:00 - 17:00)">Afternoon (13:00 - 17:00)</option>
+<option value="Evening (17:00 - 20:00)">Evening (17:00 - 20:00)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-3 text-[18px] text-on-surface-variant">schedule</span>
+</div>
+</div>
+</div>
+<button class="w-full h-12 mt-1 rounded-full bg-[#128C7E] text-white flex items-center justify-center gap-2 font-label-md text-label-md uppercase tracking-wider shadow-sm active:scale-[0.98] transition-all hover:bg-[#075E54]" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Send WhatsApp Reservation</span>
+</button>
+</form>
+<div class="flex items-center justify-center gap-1.5 text-center text-outline text-body-sm pt-1">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">info</span>
+<span class="text-[12px]">Appointments confirmed instantly via salon WhatsApp reception.</span>
+</div>
+</div>
+</section>
+<!-- 3. SIGNATURE SERVICES SECTION -->
+<section class="w-full px-margin-mobile mb-space-xl scroll-mt-20" id="services">
+<div class="flex flex-col items-center text-center mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-tertiary-container font-semibold">Excellence &amp; Senses</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">Haute Coiffure &amp; Riad Rituals</h2>
+<div class="w-12 h-0.5 bg-tertiary-fixed-dim mt-2 rounded-full"></div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs mt-2">
+        An artful fusion of Parisian hairstyling finesse and timeless ancestral Moroccan pampering.
+      </p>
+</div>
+<!-- Service Cards Stack -->
+<div class="flex flex-col gap-space-md">
+<!-- Card 1: Hair Styling & Blow Dry -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col group">
+<div class="relative w-full h-52 overflow-hidden">
+<img alt="Haute Coiffure hair styling with Dyson and Kérastase in Marrakech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1_KB7KGGt1Ml8dZUC2rIpwXqwpp2xINN2XCZ2CHTqUGoo1aAoXVLijFfeuxf8RO4uWD2aJoCtbNya1lm8uFwmiLvypWbOkZVWllMSYqT5EP7bspN52XDO6VVSsBJ9l6zxoWcBVajnvKHsMcSJEliveiMRa62CW35xn8eAU1JT81NWpeF5Xu3IDeyX_b-FEjZ2HRC9FfRsp1hFNCqfycuxI7tNnK_PZJFL1sSslywqJFYsL8-c2NtCkA"/>
+<div class="absolute top-3 right-3 bg-primary-container/85 backdrop-blur-md px-3 py-1 rounded-full">
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-semibold tracking-wider">From 350 MAD</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-primary">Hair Styling &amp; Signature Blow Dry</h3>
+<span class="font-label-sm text-label-sm text-outline">45 - 60 min</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Volume brushing, sleek Parisian blowouts, and restorative argan elixir nourishment designed to withstand the Moroccan breeze.
+          </p>
+<div class="pt-2">
+<a class="w-full h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-surface transition-colors" href="https://wa.me/212600000000?text=Hello!%20I%20would%20like%20to%20book%3A%20Hair%20Styling%20%26%20Blow%20Dry." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">chat</span>
+<span>Reserve via WhatsApp</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 2: Moroccan Hammam & Royal Spa -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col group">
+<div class="relative w-full h-52 overflow-hidden">
+<img alt="Authentic Moroccan Hammam ritual with black eucalyptus soap and rose petals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ZvPBnJLrYNILS9Wn5MkqZIyz0vL2m5qw-jnQTrjtozXnO83M71gksyRKyzpye7DYqUmDYMoG4HNkovAZnOTt19nWWxkANT0B7gjF_cpfTLYsSKzxOfUWKmI2KosgbMgYIt_PuiMo5_nvQNrPtLjB25uOlTs0WBg9SakmzgejGlWYijShE5QXIz5yaoBgFB8VGYevBztgYj3hmjFGDz3Gn-k3hWlq5f946XUv9pLvJQ311-nprkixvg"/>
+<div class="absolute top-3 right-3 bg-primary-container/85 backdrop-blur-md px-3 py-1 rounded-full">
+<span class="font-label-sm text-label-sm text-tertiary-fixed font-semibold tracking-wider">From 600 MAD</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-primary">Moroccan Hammam &amp; Royal Spa</h3>
+<span class="font-label-sm text-label-sm text-outline">75 - 90 min</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Sensory steam room exfoliation with Eucalyptus black soap, Kessa glove glow ritual, Atlas Ghassoul wrap, and gentle rose mist.
+          </p>
+<div class="pt-2">
+<a class="w-full h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-surface transition-colors" href="https://wa.me/212600000000?text=Hello!%20I%20would%20like%20to%20book%3A%20Moroccan%20Hammam%20%26%20Royal%20Spa." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">chat</span>
+<span>Reserve via WhatsApp</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 3: Hair Coloring & Balayage -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Color Studio</span>
+<h3 class="font-title-md text-title-md text-primary mt-0.5">Balayage, Gloss &amp; Highlights</h3>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high font-label-sm text-label-sm text-primary font-medium shrink-0">From 750 MAD</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Hand-painted sun-kissed French balayage, honey caramel tones, ammonia-free botanical toners, and bond-building repair treatments.
+        </p>
+<div class="pt-2">
+<a class="w-full h-10 rounded-full bg-surface-container text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-surface transition-colors" href="https://wa.me/212600000000?text=Hello!%20I%20would%20like%20to%20book%3A%20Balayage%20and%20Highlights." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">chat</span>
+<span>Reserve via WhatsApp</span>
+</a>
+</div>
+</article>
+<!-- Card 4: Haute Bridal Glamour -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Mariage &amp; Gala</span>
+<h3 class="font-title-md text-title-md text-primary mt-0.5">Haute Makeup &amp; Bridal Glamour</h3>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high font-label-sm text-label-sm text-primary font-medium shrink-0">From 550 MAD</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Flawless, heat-resistant Marrakech bridal artistry. Dewy skin perfection, softly sculpted eyes, and customized bridal trials.
+        </p>
+<div class="pt-2">
+<a class="w-full h-10 rounded-full bg-surface-container text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-surface transition-colors" href="https://wa.me/212600000000?text=Hello!%20I%20would%20like%20to%20book%3A%20Haute%20Makeup%20%26%20Bridal%20Glamour." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">chat</span>
+<span>Reserve via WhatsApp</span>
+</a>
+</div>
+</article>
+<!-- Card 5: Luminescent Facials -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Esthétique</span>
+<h3 class="font-title-md text-title-md text-primary mt-0.5">Luminescent Facial Treatments</h3>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high font-label-sm text-label-sm text-primary font-medium shrink-0">From 450 MAD</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Deep hydra-peeling infusion, organic Prickly Pear seed oil massage, and chilled jade rollers to awaken cellular luminosity.
+        </p>
+<div class="pt-2">
+<a class="w-full h-10 rounded-full bg-surface-container text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-surface transition-colors" href="https://wa.me/212600000000?text=Hello!%20I%20would%20like%20to%20book%3A%20Luminescent%20Facial%20Treatment." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">chat</span>
+<span>Reserve via WhatsApp</span>
+</a>
+</div>
+</article>
+<!-- Card 6: Russian Manicure & Pedicure Spa -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">Onglerie</span>
+<h3 class="font-title-md text-title-md text-primary mt-0.5">Russian Manicure &amp; Pedicure Spa</h3>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high font-label-sm text-label-sm text-primary font-medium shrink-0">From 280 MAD</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Meticulous dry apparatus cuticle work, long-lasting porcelain gel finishes, and botanical rose pedal softening foot baths.
+        </p>
+<div class="pt-2">
+<a class="w-full h-10 rounded-full bg-surface-container text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-surface transition-colors" href="https://wa.me/212600000000?text=Hello!%20I%20would%20like%20to%20book%3A%20Russian%20Manicure%20%26%20Pedicure%20Spa." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">chat</span>
+<span>Reserve via WhatsApp</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- 4. WHY CHOOSE US (THE MAISON STANDARD) -->
+<section class="w-full bg-surface-container-low py-space-xl px-margin-mobile mb-space-xl">
+<div class="flex flex-col items-center text-center mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-tertiary-container font-semibold">Our Philosophy</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">The Maison Standard</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">Designed for discerning residents and international travelers in Marrakech.</p>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex flex-col gap-2 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary text-[16px] leading-snug">Certified Specialists</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-relaxed">French and Moroccan master hairdressers and Hammam Kessala.</p>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex flex-col gap-2 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary text-[16px] leading-snug">Bespoke Rituals</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-relaxed">Formulas tailored to individual hair texture, porosity, and skin nuance.</p>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex flex-col gap-2 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[22px]">eco</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary text-[16px] leading-snug">Organic &amp; Prestige</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-relaxed">Kérastase, organic cold-pressed argan oil, and pure Neroli essences.</p>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex flex-col gap-2 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[22px]">cottage</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary text-[16px] leading-snug">Serene Sanctuary</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] leading-relaxed">Sun-drenched courtyard zellij, soothing fountains, and private suites.</p>
+</div>
+</div>
+</section>
+<!-- 5. EDITORIAL GALLERY SECTION -->
+<section class="w-full px-margin-mobile mb-space-xl">
+<div class="flex items-end justify-between mb-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container font-semibold">Visual Portfolio</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Sanctuary Moments</h2>
+</div>
+<a class="font-label-sm text-label-sm text-secondary uppercase tracking-widest flex items-center gap-1" href="https://instagram.com" rel="noopener" target="_blank">
+<span>@maisonriad</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+<!-- Category Filter Pill Bar -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none mb-space-sm" id="gallery-filters">
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-surface text-label-sm font-label-sm uppercase tracking-wider shrink-0 filter-btn active" data-filter="all" type="button">All</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm uppercase tracking-wider shrink-0 filter-btn" data-filter="hair" type="button">Hair &amp; Color</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm uppercase tracking-wider shrink-0 filter-btn" data-filter="makeup" type="button">Bridal Makeup</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm uppercase tracking-wider shrink-0 filter-btn" data-filter="hammam" type="button">Hammam Spa</button>
+</div>
+<!-- Gallery Grid Cards -->
+<div class="grid grid-cols-2 gap-2.5" id="gallery-grid">
+<!-- Img 1: Hair styling -->
+<div class="relative rounded-xl overflow-hidden aspect-square group shadow-sm gallery-item" data-category="hair">
+<img alt="French blow dry and bouncy hair waves in luxury Marrakech salon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1_KB7KGGt1Ml8dZUC2rIpwXqwpp2xINN2XCZ2CHTqUGoo1aAoXVLijFfeuxf8RO4uWD2aJoCtbNya1lm8uFwmiLvypWbOkZVWllMSYqT5EP7bspN52XDO6VVSsBJ9l6zxoWcBVajnvKHsMcSJEliveiMRa62CW35xn8eAU1JT81NWpeF5Xu3IDeyX_b-FEjZ2HRC9FfRsp1hFNCqfycuxI7tNnK_PZJFL1sSslywqJFYsL8-c2NtCkA"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="w-8 h-8 rounded-full bg-surface/90 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</span>
+</div>
+</div>
+<!-- Img 2: Hammam bliss -->
+<div class="relative rounded-xl overflow-hidden aspect-square group shadow-sm gallery-item" data-category="hammam">
+<img alt="Traditional Moroccan Hammam eucalyptus treatment with copper bowls and rose petals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ZvPBnJLrYNILS9Wn5MkqZIyz0vL2m5qw-jnQTrjtozXnO83M71gksyRKyzpye7DYqUmDYMoG4HNkovAZnOTt19nWWxkANT0B7gjF_cpfTLYsSKzxOfUWKmI2KosgbMgYIt_PuiMo5_nvQNrPtLjB25uOlTs0WBg9SakmzgejGlWYijShE5QXIz5yaoBgFB8VGYevBztgYj3hmjFGDz3Gn-k3hWlq5f946XUv9pLvJQ311-nprkixvg"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="w-8 h-8 rounded-full bg-surface/90 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</span>
+</div>
+</div>
+<!-- Img 3: Editorial portrait -->
+<div class="relative rounded-xl overflow-hidden aspect-square group shadow-sm gallery-item" data-category="makeup">
+<img alt="Radiant bridal makeup with gold Moroccan caftan and illuminated arches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIGFpd5x478h_REmadQWdp7_hvceKAZ1iXsHQtEJunrnfqCSxW6Cf-YPvQdaySxdeObzt-StnFN7cVOeNn46GcnazlekHo2GcWMcwZqUHP7OqbM7Pg-osr6BJValltMPBJTR3R9dFxk52MYd5oHC9QffCJumuTH2EKMLweL0EDsbewswE6uhrTPZqwrR0aGROU8u3Bp5dR07ZQBzBUaTb86g4URohUMekb5AXIvkfFb-s8m9uiVLAYFw"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="w-8 h-8 rounded-full bg-surface/90 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</span>
+</div>
+</div>
+<!-- Img 4: Architectural Moroccan Ambience (generative placeholder) -->
+<div class="relative rounded-xl overflow-hidden aspect-square group shadow-sm gallery-item" data-category="hammam">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Quiet sun-drenched Moroccan riad courtyard with zellij green and cream tiles, central bubbling water fountain with floating pink rose petals, carved cedarwood arches, warm afternoon golden light, luxury wellness spa ambiance in Marrakech" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnBTtqU9sTMNGkOGhgi8v_0MAybKJITbGxkHrSDIk_Ki7-lg4nm9-MtSdYCXbB6y1RtSKeLp_wCdhvcNNoiqaq5tJwpx1aPVXWmgsW0ejb6bwEKFVMofWYFrUlAG8Fifv4nyXPhqckzB6hzGSxYW_8mizt6T7WXrBS8nXrsHW0fycyTtt4A7wcvo8_RpZPOX3QdcrNNHhgTlC0sshTEcNiy92i9RMs5lfPkJyTyqNsTc8EGMNHKJ6Yag"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="w-8 h-8 rounded-full bg-surface/90 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. SPECIAL OFFERS SECTION (CURATED PACKAGES) -->
+<section class="w-full px-margin-mobile mb-space-xl">
+<div class="bg-[#FBF5F4] p-5 rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Seasonal Indulgence</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Exclusive Ritual Packages</h2>
+</div>
+<span class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">loyalty</span>
+</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Package 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg flex flex-col gap-2 shadow-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-primary text-[17px]">The Royal Marrakech Ritual</h3>
+<span class="text-right">
+<span class="text-[12px] line-through text-outline">1,200 MAD</span>
+<span class="block font-headline-sm text-headline-sm text-secondary font-bold text-[18px]">950 MAD</span>
+</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Full Traditional Hammam exfoliation + Organic Argan Hair Blow Dry + Classic Rose Petal Manicure. Complete head-to-toe rebirth.
+          </p>
+<a class="h-10 mt-1 rounded-full bg-primary-container text-surface flex items-center justify-center gap-1.5 font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-all" href="https://wa.me/212600000000?text=Hello!%20I%20would%20like%20to%20book%20the%20Special%20Offer%3A%20The%20Royal%20Marrakech%20Ritual%20(950%20MAD)." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">chat</span>
+<span>Claim Royal Ritual via WhatsApp</span>
+</a>
+</div>
+<!-- Package 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-lg flex flex-col gap-2 shadow-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-title-md text-title-md text-primary text-[17px]">Bridal Glow Radiance</h3>
+<span class="text-right">
+<span class="text-[12px] line-through text-outline">1,800 MAD</span>
+<span class="block font-headline-sm text-headline-sm text-secondary font-bold text-[18px]">1,400 MAD</span>
+</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Bridal Hair Consultation &amp; Trial + Luminescent Hydra Facial + Wedding Day Glamour Makeup with false silk lashes.
+          </p>
+<a class="h-10 mt-1 rounded-full bg-primary-container text-surface flex items-center justify-center gap-1.5 font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-all" href="https://wa.me/212600000000?text=Hello!%20I%20would%20like%20to%20book%20the%20Special%20Offer%3A%20Bridal%20Glow%20Radiance%20(1400%20MAD)." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">chat</span>
+<span>Claim Bridal Offer via WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. CLIENT TESTIMONIALS (MARRAKECH & INTERNATIONAL) -->
+<section class="w-full px-margin-mobile mb-space-xl">
+<div class="flex flex-col items-center text-center mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container font-semibold">Client Accolades</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Voices of Our Guests</h2>
+</div>
+<!-- Horizontally swipeable testimonial cards -->
+<div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-none">
+<!-- Review 1 -->
+<div class="snap-center shrink-0 w-[84%] bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-2">
+<div class="flex text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+            "The most luxurious salon experience in Marrakech. The blow dry lasted 5 whole days despite the heat, and the hammam scrub left my skin glowing."
+          </p>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold text-xs">SL</div>
+<div>
+<p class="font-label-md text-label-md text-primary font-semibold">Sophia L.</p>
+<p class="font-label-sm text-label-sm text-outline">Paris, France</p>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="snap-center shrink-0 w-[84%] bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-2">
+<div class="flex text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+            "The caramel balayage and bridal makeup exceeded every expectation. An oasis of calm and refinement right in the center of Guéliz."
+          </p>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold text-xs">KB</div>
+<div>
+<p class="font-label-md text-label-md text-primary font-semibold">Kenza B.</p>
+<p class="font-label-sm text-label-sm text-outline">Casablanca, Morocco</p>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="snap-center shrink-0 w-[84%] bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-2">
+<div class="flex text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+            "Instant WhatsApp reservation made booking so effortless on holiday. Mint tea served during styling, genuine 5-star Moroccan hospitality."
+          </p>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold text-xs">EM</div>
+<div>
+<p class="font-label-md text-label-md text-primary font-semibold">Elena M.</p>
+<p class="font-label-sm text-label-sm text-outline">London, UK</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. ABOUT MAISON RIAD BEAUTÉ -->
+<section class="w-full px-margin-mobile mb-space-xl">
+<div class="bg-surface-container p-6 rounded-2xl flex flex-col gap-space-sm relative overflow-hidden shadow-sm">
+<div class="flex items-center gap-2 text-on-tertiary-container">
+<span class="material-symbols-outlined text-[20px]">history_edu</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold">Our Heritage</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Born from Parisian Chic &amp; Moroccan Soul</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Founded in Marrakech’s chic Guéliz district, Maison Riad was created to unite centuries of Moroccan botanical wisdom — pure argan, rosewater, volcanic clays — with modern Parisian hair couture techniques. Here, self-care is elevated to a tranquil, timeless art.
+      </p>
+<div class="pt-2 flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-primary text-surface flex items-center justify-center text-xs font-semibold">MR</div>
+<div class="w-8 h-8 rounded-full bg-secondary text-surface flex items-center justify-center text-xs font-semibold">7+</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-tertiary-fixed flex items-center justify-center text-xs font-semibold">VIP</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium tracking-wider uppercase">Master Artists Onsite</span>
+</div>
+</div>
+</section>
+<!-- 9. CONTACT & SALON LOCATION -->
+<section class="w-full px-margin-mobile mb-space-md">
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-tertiary-container font-semibold">Visit Our Sanctuary</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Location &amp; Hours</h2>
+</div>
+<!-- Static Map Element with Pin -->
+<div class="w-full h-44 rounded-lg bg-cover bg-center relative shadow-inner overflow-hidden" data-location="Gueliz, Marrakech, Morocco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsUG-VNEG32Vkc5R6cDn9tg054nugsLnOrT9OJSGOawhxLg_RQFxgURgbdUHMsNG4ps136b9ZL1NcXI5avlTssPztn_iGCP8-6sj1wlpgHf1uUIx0yToFanrTvvKfOeaiW_kK9tLfQLUzpREfi6kTQGR4KDdYUBokRRzUicI2jhKNYxk-sCJwCyD1StnTDFON-YvWnrlO-s8qZ4V8NVfWd4-Xt_4SWk6-LeTD_jm6IDs69_J42ijAg4A')">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px] flex items-center justify-center">
+<div class="px-3.5 py-2 rounded-full bg-surface-container-lowest/95 backdrop-blur-md shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-error">location_on</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Maison Riad • Guéliz</span>
+</div>
+</div>
+</div>
+<!-- Contact Details -->
+<div class="flex flex-col gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container shrink-0 mt-0.5">pin_drop</span>
+<div>
+<strong class="text-primary block font-medium">Salon Address</strong>
+<span>14 Rue de la Liberté, Quartier Guéliz, Marrakech 40000, Morocco</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container shrink-0 mt-0.5">schedule</span>
+<div>
+<strong class="text-primary block font-medium">Opening Hours</strong>
+<span>Tuesday – Sunday: 10:00 AM – 8:00 PM</span><br/>
+<span class="text-[12px] text-outline">Monday: Reserved for private VIP &amp; bridal bookings</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container shrink-0 mt-0.5">phone_iphone</span>
+<div>
+<strong class="text-primary block font-medium">Direct Concierge Line</strong>
+<a class="text-secondary hover:underline" href="tel:+212600000000">+212 6 00 00 00 00</a>
+</div>
+</div>
+</div>
+<!-- Instant Contact Action Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<a class="h-11 rounded-lg bg-[#25D366] text-white flex items-center justify-center gap-1.5 font-label-sm text-label-sm uppercase tracking-wider font-semibold shadow-sm active:scale-95 transition-transform" href="https://wa.me/212600000000?text=Hello%20Maison%20Riad%20Marrakech!%20I%20would%20like%20to%20inquire%20about%20availability." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>WhatsApp</span>
+</a>
+<a class="h-11 rounded-lg bg-surface-container-high text-primary flex items-center justify-center gap-1.5 font-label-sm text-label-sm uppercase tracking-wider font-semibold active:scale-95 transition-transform" href="tel:+212600000000">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call Salon</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 10. DEDICATED CONCIERGE ASSISTANCE PILL -->
+<div class="px-margin-mobile mb-4 flex items-center justify-center">
+<div class="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-surface-container-high text-on-surface-variant text-[12px]">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>Salon reception replies within 10 minutes on WhatsApp</span>
+</div>
+</div>
+</div>
+<!-- Interactive Client-side Script for Quick-Booker & Category Filter -->
+<script>
+  (function() {
+    // Quick book submit handler that crafts WhatsApp link
+    window.submitQuickBooking = function() {
+      const service = document.getElementById('book-service').value;
+      const date = document.getElementById('book-date').value || 'Upcoming date';
+      const time = document.getElementById('book-time').value;
+
+      const message = `Hello Maison Riad Marrakech! I would like to book a reservation:%0A• Ritual: ${encodeURIComponent(service)}%0A• Date: ${encodeURIComponent(date)}%0A• Time: ${encodeURIComponent(time)}%0APlease let me know your availability.`;
+      const url = `https://wa.me/212600000000?text=${message}`;
+      window.open(url, '_blank');
+    };
+
+    // Pre-fill tomorrow as default date
+    const dateInput = document.getElementById('book-date');
+    if (dateInput) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      dateInput.value = tomorrow.toISOString().split('T')[0];
+    }
+
+    // Gallery Category Filtering Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Toggle active button style
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-primary-container', 'text-surface');
+          b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        this.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        this.classList.add('bg-primary-container', 'text-surface');
+
+        const filter = this.getAttribute('data-filter');
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  })();
+</script><footer class="w-full bg-primary-container text-surface mt-space-xl px-margin-mobile py-space-xl"><div class="flex flex-col gap-space-lg max-w-sm mx-auto"><div class="flex items-center gap-space-sm"><img alt="Maison Riad Beauté Logo" class="h-8 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida/AEtjO1WugkDAO579DW3RQisKYE9td-YNQz88VUdQIxBijkbrC7DOxnZcEyD_KQWpa_wjVas138hx25XHH8N5b9QwBz7IfEC4crwg6MHbfeObTeDAlmzwqlHnHZpz0cY96eF4H6iRNnV5rEPk4ff1VEGD6V7HJhEbg3NIixsgfEsRuUAmmawWlMWoa4rlVS7tV_amSAc8mSWeThBEyaIadQZIQQZFEvAD0RcW131wBdtg5DfBwFjlsHv1gCWfT_7u"/><span class="font-headline-sm text-headline-sm text-surface">Maison Riad</span></div><p class="font-body-sm text-body-sm text-surface-variant/80 leading-relaxed">An architectural haven fusing timeless Moroccan botanical hammam rituals with effortless Parisian haute coiffure.</p><div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-surface-container-high"><div class="flex items-start gap-2"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed">location_on</span><span>Angle Rue des Temples, Quartier Hivernage &amp; Guéliz, 40000 Marrakech</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-tertiary-fixed">call</span><span>+212 5 24 00 00 00</span></div></div><div class="flex items-center gap-space-md"><a aria-label="Instagram" class="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-surface hover:bg-tertiary-container transition-colors" href="https://instagram.com" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[20px]">photo_camera</span></a><a aria-label="Facebook" class="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-surface hover:bg-tertiary-container transition-colors" href="https://facebook.com" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[20px]">share</span></a></div><div class="pt-space-sm text-center"><p class="font-label-sm text-label-sm text-surface-dim/70 tracking-widest uppercase">© 2025 Maison Riad Beauté. Marrakech. Tous droits réservés.</p></div></div></footer></main><a aria-label="Direct WhatsApp Booking" class="fixed bottom-24 right-4 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_8px_25px_rgba(37,211,102,0.35)] active:scale-90 transition-transform" href="https://wa.me/212600000000?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Maison%20Riad%20Beaut%C3%A9." rel="noopener" target="_blank"><span class="absolute -top-1 -right-1 flex h-4 w-4"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75"></span><span class="relative inline-flex rounded-full h-4 w-4 bg-[#128C7E]"></span></span><span class="material-symbols-outlined text-[28px]">chat</span></a><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(56,40,36,0.06)]" data-active-classes="text-tertiary-container font-semibold"><div class="flex justify-around items-center h-16 px-space-sm"><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-11 transition-colors text-tertiary-container font-semibold" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">spa</span><span class="font-label-sm text-label-sm mt-0.5">Riad</span></a><a class="flex flex-col items-center justify-center w-14 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#"><span class="material-symbols-outlined text-[22px]">auto_awesome</span><span class="font-label-sm text-label-sm mt-0.5">Rituals</span></a><a class="flex flex-col items-center justify-center w-14 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="gallery" href="#"><span class="material-symbols-outlined text-[22px]">gallery_thumbnail</span><span class="font-label-sm text-label-sm mt-0.5">Gallery</span></a><a class="flex flex-col items-center justify-center w-14 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="special-offers" href="#"><span class="material-symbols-outlined text-[22px]">loyalty</span><span class="font-label-sm text-label-sm mt-0.5">Offers</span></a><a class="flex flex-col items-center justify-center w-14 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#"><span class="material-symbols-outlined text-[22px]">concierge</span><span class="font-label-sm text-label-sm mt-0.5">Contact</span></a></div></nav><script>(function(){const o=document.getElementById('menu-open-btn'),c=document.getElementById('menu-close-btn'),b=document.getElementById('drawer-backdrop'),d=document.getElementById('mobile-drawer'),p=document.getElementById('drawer-panel');function toggle(s){if(s){d.classList.remove('pointer-events-none','opacity-0');d.classList.add('opacity-100');p.classList.remove('-translate-x-full');p.classList.add('translate-x-0');}else{d.classList.add('opacity-0');p.classList.remove('translate-x-0');p.classList.add('-translate-x-full');setTimeout(()=>{d.classList.add('pointer-events-none');},300);}}if(o)o.addEventListener('click',()=>toggle(true));if(c)c.addEventListener('click',()=>toggle(false));if(b)b.addEventListener('click',()=>toggle(false));})();</script></body></html>
